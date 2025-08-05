@@ -1,0 +1,19 @@
+<nav class="navbar" (mouseleave)="onMouseLeave()">
+    <ul class="nav-items">
+        <li *ngFor="let item of navItems" class="nav-item">
+            <span (mouseenter)="onMouseEnter(item)" class="nav-link">{{ item.label }}</span>
+            <div class="submenu" [ngClass]="{'show': activeItem === item}">
+                <div style="margin-top: 50px; margin-bottom: 20px;">
+                    <ng-container *ngFor="let sub of item.subMenu">
+                        <ul>
+                            <li>
+                                <!-- collumn1 -->
+                                <span>{{ sub.label }}</span>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
