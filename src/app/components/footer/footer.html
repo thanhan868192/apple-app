@@ -1,3 +1,23 @@
-<footer>
-    <p>footer works!</p>
+<footer class="apple-footer">
+  <div class="footer-top">
+    <div class="footer-group" *ngFor="let group of footerGroups; let i = index">
+      <h3 class="footer-title" (click)="toggleSection(i)" [ngClass]="{'active': isSectionOpen(i)}">
+        {{ group.title }}
+      </h3>
+      <ul class="footer-list" *ngIf="isSectionOpen(i) || isDesktop">
+        <li *ngFor="let item of group.items">
+          <a href="#">{{ item }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright © 2025 Apple Inc. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Legal</a></li>
+    </ul>
+  </div>
 </footer>

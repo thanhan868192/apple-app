@@ -9,6 +9,12 @@
   transform: translateX(0);
 }
 
+.ull-fit-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .bg-image {
   position: relative;
   background-size: cover;
@@ -23,7 +29,7 @@
   right: 0;
   bottom: 0;
   padding: 2rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .text-gradient {

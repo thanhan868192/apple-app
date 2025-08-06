@@ -98,7 +98,7 @@ export class Navbar {
       ],
     },
     {
-      label: '',
+      label: 'Support',
       subMenu: [
         { label: 'iPhone 15', link: '/iphone-15' },
         { label: 'iPhone 16', link: '/iphone-16' },
