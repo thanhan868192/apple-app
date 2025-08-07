@@ -10,6 +10,7 @@ import { SharedModule } from '../../module/shared.module';
   styleUrl: './navbar.scss'
 })
 export class Navbar {
+  isMenuOpen = false;
   activeItem: any = null;
   timeoutId: any;
   navItems: MyMenuItem[] = [
@@ -433,6 +434,10 @@ export class Navbar {
 
   onMouseLeave() {
     this.activeItem = null;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
 }

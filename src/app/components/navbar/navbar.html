@@ -7,12 +7,16 @@
         </path>
       </svg>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+      <ng-container *ngIf="!isMenuOpen; else closeIcon">
+        <span class="navbar-toggler-icon"></span>
+      </ng-container>
+      <ng-template #closeIcon>
+        <span style="font-size: 24px;">&#10005;</span>
+      </ng-template>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}" id="navbarNav">
       <ul class="navbar-nav ms-auto nav-items">
         <li class="nav-item d-none d-lg-block">
           <a href="/" class="apple-icon-link">
