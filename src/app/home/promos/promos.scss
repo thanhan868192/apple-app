@@ -13,6 +13,10 @@
   bottom: 0;
   padding: 2rem;
   z-index: 1;
+  display: flex;
+  &.black-content {
+    color: #000;
+  }
 }
 
 .text-gradient {
@@ -21,4 +25,14 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
+}
+
+.subhead {
+  font-size: 20px;
+  line-height: 1.14286;
+  font-weight: 400;
+  letter-spacing: 0.007em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 6px;
 }

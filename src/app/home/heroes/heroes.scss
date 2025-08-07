@@ -3,6 +3,7 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
+  height: 700px;
 }
 
 .overlay-content {
@@ -31,4 +32,14 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+}
+
+.subhead {
+  font-size: 28px;
+  line-height: 1.14286;
+  font-weight: 400;
+  letter-spacing: 0.007em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 6px;
 }

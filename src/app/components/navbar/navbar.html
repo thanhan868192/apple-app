@@ -27,7 +27,7 @@
           <span style="color: black;" (mouseenter)="onMouseEnter(item)" class="nav-link">{{ item.label }}</span>
           <!-- sub menu -->
           <div class="submenu" [ngClass]="{'show': activeItem === item}">
-            <div class="submenu-content">
+            <div class="submenu-content" [ngClass]="{'show': activeItem === item}">
               <div class="submenu-grid">
                 <ng-container *ngFor="let group of item.subMenu">
                   <div class="submenu-group">
