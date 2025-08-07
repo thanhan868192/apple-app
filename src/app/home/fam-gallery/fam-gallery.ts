@@ -20,14 +20,17 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
     { image: '417x236_4.jpg' },
   ];
   scrollPosition = 0;
-  currentSpeed = 1.5;
-  targetSpeed = 1.5; // px per frame
+  currentSpeed = 0.8;
+  targetSpeed = 0.8; // px per frame
   rafId: any;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
-    this.items = [...this.originalItems, ...this.originalItems];
+    this.items = [];
+    for (let i = 0; i < 5; i++) {
+      this.items = this.items.concat(this.originalItems);
+    }
   }
 
   ngAfterViewInit(): void {
@@ -40,7 +43,7 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
   animateScroll() {
     const carousel = this.carouselRef.nativeElement;
 
-    this.currentSpeed += (this.targetSpeed - this.currentSpeed) * 0.05;
+    this.currentSpeed += (this.targetSpeed - this.currentSpeed) * 0.03;
 
     this.scrollPosition += this.currentSpeed;
 
@@ -59,7 +62,7 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
   }
 
   fastScroll() {
-    this.targetSpeed = 1.5;
+    this.targetSpeed = 0.8;
   }
 
   ngOnDestroy() {
