@@ -16,92 +16,409 @@ export class Navbar {
     {
       label: 'Store',
       subMenu: [
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Mac',
       subMenu: [
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'iPad',
       subMenu: [
-        { label: 'MacBook Air', link: '/macbook-air' },
-        { label: 'MacBook Pro', link: '/macbook-pro' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'iPhone',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Watch',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Vison',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'AirPods',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'TV & Home',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Entertainment',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Accessories',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     },
     {
       label: 'Support',
       subMenu: [
-        { label: 'iPhone 15', link: '/iphone-15' },
-        { label: 'iPhone 16', link: '/iphone-16' },
+        {
+          title: 'Mac',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
+        {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        }, {
+          title: 'iMac & More',
+          items: [
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+            { label: 'MacBook Pro' },
+            { label: 'MacBook Air' },
+          ]
+        },
       ],
     }
   ];
