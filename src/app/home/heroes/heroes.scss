@@ -1,0 +1,34 @@
+.bg-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #007aff, #ff2d55, #ff9500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
