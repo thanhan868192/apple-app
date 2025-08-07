@@ -12,12 +12,12 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
   animatedImage!: HTMLElement;
   items: any[] = [];
   originalItems = [
-    { image: '/196x196SC.DN01.jpg' },
-    { image: '/196x196sr.jpg' },
-    { image: '/417x236_1.jpg' },
-    { image: '/417x236_2.jpg' },
-    { image: '/417x236_3.jpg' },
-    { image: '/417x236_4.jpg' },
+    { image: '196x196SC.DN01.jpg' },
+    { image: '196x196sr.jpg' },
+    { image: '417x236_1.jpg' },
+    { image: '417x236_2.jpg' },
+    { image: '417x236_3.jpg' },
+    { image: '417x236_4.jpg' },
   ];
   scrollPosition = 0;
   currentSpeed = 1.5;
