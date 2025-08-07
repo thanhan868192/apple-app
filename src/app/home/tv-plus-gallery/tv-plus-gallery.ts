@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { GALARRY_ITEMS } from '../../constants/tv-plus-gallery.constant';
+import { TV_GALARRY_ITEMS } from '../../constants/tv-plus-gallery.constant';
 
 @Component({
   selector: 'app-tv-plus-gallery',
@@ -9,5 +9,5 @@ import { GALARRY_ITEMS } from '../../constants/tv-plus-gallery.constant';
   styleUrl: './tv-plus-gallery.scss'
 })
 export class TvPlusGallery {
-  slides = GALARRY_ITEMS
+  slides = TV_GALARRY_ITEMS
 }

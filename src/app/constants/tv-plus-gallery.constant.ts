@@ -1,4 +1,4 @@
-export const GALARRY_ITEMS: any[] = [
+export const TV_GALARRY_ITEMS: any[] = [
   {
     image: '1250x703_1.jpg',
     title: 'First slide label',

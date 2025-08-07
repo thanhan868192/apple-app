@@ -1,5 +1,6 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { FAM_GALARRY_ITEMS } from '../../constants/fam-gallery.constant';
 
 @Component({
   selector: 'app-fam-gallery',
@@ -11,17 +12,10 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('carousel', { static: false }) carouselRef!: ElementRef;
   animatedImage!: HTMLElement;
   items: any[] = [];
-  originalItems = [
-    { image: '196x196SC.DN01.jpg' },
-    { image: '196x196sr.jpg' },
-    { image: '417x236_1.jpg' },
-    { image: '417x236_2.jpg' },
-    { image: '417x236_3.jpg' },
-    { image: '417x236_4.jpg' },
-  ];
+  originalItems = FAM_GALARRY_ITEMS;
   scrollPosition = 0;
-  currentSpeed = 0.8;
-  targetSpeed = 0.8; // px per frame
+  currentSpeed = 1;
+  targetSpeed = 1; // px per frame
   rafId: any;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
@@ -62,7 +56,7 @@ export class FamGallery implements AfterViewInit, OnInit, OnDestroy {
   }
 
   fastScroll() {
-    this.targetSpeed = 0.8;
+    this.targetSpeed = 1;
   }
 
   ngOnDestroy() {
