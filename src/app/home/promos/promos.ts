@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PROMOS_DATA } from '../../constants/promos.constant';
+import { PROMOS_IMPORTS } from '../../shared/promos.import';
 
 @Component({
   selector: 'app-promos',
-  imports: [CommonModule],
+  imports: [...PROMOS_IMPORTS],
   templateUrl: './promos.html',
   styleUrl: './promos.scss'
 })

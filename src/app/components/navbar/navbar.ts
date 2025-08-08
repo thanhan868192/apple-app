@@ -1,13 +1,13 @@
+import { isPlatformBrowser } from '@angular/common';
 import { ChangeDetectionStrategy, Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { NAV_ITEMS } from '../../constants/navbar.constant';
 import { MyMenuItem } from '../../models/menu.model';
-import { SharedModule } from '../../modules/shared.module';
-import { isPlatformBrowser } from '@angular/common';
+import { NAVBAR_IMPORTS } from '../../shared/navbar.import';
 
 @Component({
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SharedModule],
+  imports: [...NAVBAR_IMPORTS],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })

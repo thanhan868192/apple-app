@@ -1,10 +1,11 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { FAM_GALARRY_ITEMS } from '../../constants/fam-gallery.constant';
+import { FAM_GALLEY_IMPORTS } from '../../shared/fam-gallery.import';
 
 @Component({
   selector: 'app-fam-gallery',
-  imports: [CommonModule],
+  imports: [...FAM_GALLEY_IMPORTS],
   templateUrl: './fam-gallery.html',
   styleUrl: './fam-gallery.scss'
 })
