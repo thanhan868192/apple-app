@@ -16,9 +16,9 @@
       </ng-template>
     </button>
 
-    <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}" id="navbarNav">
-      <!-- navbar -->
-      <ul class="navbar-nav ms-auto nav-items">
+    <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen, 'has-submenu': !!activeItemMobile}"
+      id="navbarNav">
+      <ul class="navbar-nav ms-auto nav-items panel panel-main">
         <li class="nav-item d-none d-lg-block">
           <a href="/" class="apple-icon-link">
             <svg class="apple-icon" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,8 @@
           </a>
         </li>
         <li *ngFor="let item of navItems" class="nav-item">
-          <span class="nav-link" (mouseenter)="onItemEnter(item)" (focus)="onItemEnter(item)">{{ item.label }}</span>
+          <span class="nav-link" (click)="onNavItemClick(item)" (mouseenter)="onItemEnter(item)"
+            (focus)="onItemEnter(item)">{{ item.label }}</span>
         </li>
         <li>
           <span class="d-none d-lg-block" style="padding-left: 10px;">
@@ -51,9 +52,17 @@
         </li>
       </ul>
 
-      <div *ngIf="isMenuOpen && activeItemMobile as act " class="submenu" [class.show]="activeItemMobile">
-        <ng-container *ngTemplateOutlet="submenuTpl; context: { act: act }">
-        </ng-container>
+      <div class="panel panel-submenu" *ngIf="isMenuOpen && activeItemMobile as act">
+        <div class="submenu-header d-lg-none">
+          <button class="btn-back" type="button" (click)="onBack()">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="submenu-scroll">
+          <ng-container *ngTemplateOutlet="submenuTpl; context: { act: act }"></ng-container>
+        </div>
       </div>
     </div>
   </div>

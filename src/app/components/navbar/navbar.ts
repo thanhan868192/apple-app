@@ -30,6 +30,15 @@ export class Navbar {
     }
   }
 
+  onNavItemClick(item: any) {
+    if (!this.isMenuOpen) this.isMenuOpen = true;
+    this.activeItemMobile = item;
+    setTimeout(() =>
+      document.querySelector('.panel-submenu .submenu-scroll')
+        ?.scrollTo({ top: 0, behavior: 'auto' })
+    );
+  }
+
   onItemEnter(item: any) {
     if (this.isMenuOpen) {
       this.activeItemMobile = item;
@@ -58,6 +67,10 @@ export class Navbar {
     this.isMenuOpen = !this.isMenuOpen;
     if (this.isMenuOpen) this.lockScroll();
     else this.unlockScroll();
+  }
+
+  onBack() {
+    this.activeItemMobile = null;
   }
 
   private lockScroll() {

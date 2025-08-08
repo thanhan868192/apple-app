@@ -194,40 +194,84 @@
       inset: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-
-      /* Dùng vh + svh để tương thích iOS cũ & mới */
-      // height: calc(100vh - 50px);
-      // height: calc(100svh - 50px);
-      // background: rgba(255, 255, 255, 0.96);
-      // backdrop-filter: blur(10px);
-      // -webkit-backdrop-filter: blur(10px);
-
-      // overflow-y: auto; /* scroll chính ở đây */
-      // -webkit-overflow-scrolling: touch;
-      //
-      height: 100dvh;
+      height: 100vh;
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
 
-      height: 100svh;
-      max-height: 100svh;
+      overflow: hidden;
+
+      &.show {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      &:not(.show) {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+    }
+  }
+
+  .panel {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.25s ease;
+  }
+
+  .submenu-content {
+    padding-left: 60px;
+    padding-top: 30px;
+  }
+  .panel-submenu {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    background: transparent;
+
+    .submenu-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px 0 16px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+    .submenu-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-left: auto;
+    }
+
+    .submenu-scroll {
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
+  }
 
-    .navbar-collapse:not(.show) {
-      pointer-events: none;
-      opacity: 0;
-      transform: translateY(-8px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+  .navbar-collapse.has-submenu {
+    .panel-main {
+      transform: translateX(-100%);
     }
-    .navbar-collapse.show {
-      pointer-events: auto;
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+    .panel-submenu {
+      transform: translateX(0);
     }
   }
 
@@ -235,19 +279,4 @@
     padding-left: 60px;
     padding-top: 30px;
   }
-
-  // .submenu-content {
-  //   padding-left: 60px;
-  //   padding-top: 30px;
-
-  //   max-height: calc(100svh - 50px - 30px);
-  //   overflow-y: auto;
-  //   -webkit-overflow-scrolling: touch;
-  // }
-
-  // .submenu {
-  //   max-height: calc(100svh - 50px);
-  //   overflow-y: auto;
-  //   -webkit-overflow-scrolling: touch;
-  // }
 }
