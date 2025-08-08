@@ -51,27 +51,9 @@
         </li>
       </ul>
 
-      <div *ngIf="isMenuOpen && activeItemMobile as act" class="submenu" [class.show]="activeItemMobile">
+      <div *ngIf="isMenuOpen && activeItemMobile as act " class="submenu" [class.show]="activeItemMobile">
         <ng-container *ngTemplateOutlet="submenuTpl; context: { act: act }">
         </ng-container>
-      </div>
-
-      <div *ngIf="isMenuOpen && activeItemMobile" class="submenu" [class.show]="!!activeItemMobile">
-        <div class="submenu-content" *ngIf="activeItemMobile as act">
-          <div class="submenu-grid ms-auto">
-            <ng-container *ngFor="let group of act.subMenu">
-              <div class="submenu-group">
-                <h2 class="submenu-title">{{ group.title }}</h2>
-                <div class="submenu-item" *ngFor="let sub of group.items">
-                  <span>{{ sub.label }}</span>
-                </div>
-                <div *ngFor="let sub of group.subItems">
-                  <span class="submenu-item">{{ sub.label }}</span>
-                </div>
-              </div>
-            </ng-container>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -80,7 +62,8 @@
 <div class="nav-curtain" [class.show]="!!activeItem">
 </div>
 
-<div *ngIf="!isMenuOpen && activeItem as act" class="submenu" (mouseleave)="onSubLeave()" [class.show]="!!activeItem">
+<div class="test" *ngIf="!isMenuOpen && activeItem as act" class="submenu" (mouseleave)="onSubLeave()"
+  [class.show]="!!activeItem">
   <ng-container *ngTemplateOutlet="submenuTpl; context: { act: act }">
   </ng-container>
 </div>

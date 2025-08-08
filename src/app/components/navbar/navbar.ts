@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { NAV_ITEMS } from '../../constants/navbar.constant';
 import { MyMenuItem } from '../../models/menu.model';
 import { SharedModule } from '../../modules/shared.module';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -16,10 +17,18 @@ export class Navbar {
   navItems: MyMenuItem[] = NAV_ITEMS;
   isMenuOpen = false;
   timeoutId: any;
+  private readonly isBrowser: boolean;
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: object) { this.isBrowser = isPlatformBrowser(platformId); }
 
-  ngOnInit() { }
+  @HostListener('window:resize')
+  onResize() {
+    if (!this.isBrowser) return;
+    const isDesktop = window.matchMedia('(min-width: 992px)').matches;
+    if (isDesktop && this.isMenuOpen) {
+      this.closeMobileMenu();
+    }
+  }
 
   onItemEnter(item: any) {
     if (this.isMenuOpen) {
@@ -38,17 +47,34 @@ export class Navbar {
   }
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    if (!this.isBrowser) return;
 
-    if (this.isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+    const isDesktop = window.matchMedia('(min-width: 992px)').matches;
+    if (isDesktop) {
+      this.closeMobileMenu();
+      return;
     }
+
+    this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) this.lockScroll();
+    else this.unlockScroll();
+  }
+
+  private lockScroll() {
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+  }
+  private unlockScroll() {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+  }
+
+  private closeMobileMenu() {
+    this.isMenuOpen = false;
+    this.activeItemMobile = null;
+    this.unlockScroll();
   }
 
 }
