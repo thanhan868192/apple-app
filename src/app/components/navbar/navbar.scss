@@ -1,6 +1,9 @@
 @use "../../../styles/variables.scss" as v;
 
 .navbar {
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -187,7 +190,11 @@
 
     .navbar-collapse {
       position: fixed !important;
+      top: 50px;
       inset: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: calc(100dvh - 66px);
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
