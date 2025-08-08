@@ -173,12 +173,13 @@
     }
     .navbar-nav {
       align-items: baseline;
-      padding-top: 30px;
-      padding-left: 40px;
+      padding-top: 40px;
+      padding-left: 60px;
       gap: 0;
     }
 
     .nav-items {
+      justify-content: unset;
       .nav-item {
         font-size: 28px;
         font-weight: 500;
@@ -224,7 +225,7 @@
 
   .submenu-content {
     padding-left: 60px;
-    padding-top: 30px;
+    padding-top: 0;
   }
   .panel-submenu {
     display: flex;
@@ -273,10 +274,5 @@
     .panel-submenu {
       transform: translateX(0);
     }
-  }
-
-  .submenu-content {
-    padding-left: 60px;
-    padding-top: 30px;
   }
 }
