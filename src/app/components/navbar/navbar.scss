@@ -188,12 +188,12 @@
     .navbar-collapse {
       position: fixed !important;
       inset: 0;
-      height: 100dvh;
+      height: calc(100dvh - 66px);
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
 
-      overflow-y: auto;
+      overflow: auto;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
       padding: 16px 20px 32px;
