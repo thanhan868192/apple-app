@@ -28,7 +28,7 @@
           </a>
         </li>
         <li *ngFor="let item of navItems" class="nav-item">
-          <span style="color: black;" (mouseenter)="onMouseEnter(item)" class="nav-link">{{ item.label }}</span>
+          <span (mouseenter)="onMouseEnter(item)" class="nav-link">{{ item.label }}</span>
           <!-- sub menu -->
           <div class="submenu" [ngClass]="{'show': activeItem === item}">
             <div class="submenu-content" [ngClass]="{'show': activeItem === item}">

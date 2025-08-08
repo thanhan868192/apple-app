@@ -9,7 +9,6 @@ export const NAV_ITEMS: MyMenuItem[] = [
         items: [
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
-          { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
@@ -21,7 +20,6 @@ export const NAV_ITEMS: MyMenuItem[] = [
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
           { label: 'MacBook Pro' },
-          { label: 'MacBook Air' },
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
         ]
@@ -32,7 +30,6 @@ export const NAV_ITEMS: MyMenuItem[] = [
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
           { label: 'MacBook Pro' },
-          { label: 'MacBook Air' },
           { label: 'MacBook Pro' },
           { label: 'MacBook Air' },
         ]
