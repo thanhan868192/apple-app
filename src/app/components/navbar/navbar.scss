@@ -6,6 +6,7 @@
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
+  height: 44px;
   z-index: 99999;
 
   .navbar-nav {
@@ -45,7 +46,7 @@
     }
 
     .apple-icon {
-      height: 50px;
+      height: 45px;
       width: auto;
       fill: black;
       transition: transform 0.2s ease;
@@ -162,6 +163,12 @@
 /* Mobile accordion */
 @media (max-width: 768px) {
   .navbar {
+    height: 50px;
+    padding: 0;
+
+    .apple-icon-link {
+      padding: 0;
+    }
     .navbar-nav {
       align-items: baseline;
       padding-top: 30px;
