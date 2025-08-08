@@ -8,6 +8,7 @@ export interface MyMenuItem extends MenuItem {
 export interface SubMenuItem {
   title: string
   items?: Item[];
+  subItems?: Item[];
 }
 
 export interface Item {

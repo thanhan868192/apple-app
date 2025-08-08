@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" (mouseleave)="onMouseLeave()">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a href="/" class="navbar-brand d-lg-none apple-icon-link">
       <svg class="apple-icon" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
@@ -17,6 +17,7 @@
     </button>
 
     <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}" id="navbarNav">
+      <!-- navbar -->
       <ul class="navbar-nav ms-auto nav-items">
         <li class="nav-item d-none d-lg-block">
           <a href="/" class="apple-icon-link">
@@ -28,23 +29,7 @@
           </a>
         </li>
         <li *ngFor="let item of navItems" class="nav-item">
-          <span (mouseenter)="onMouseEnter(item)" class="nav-link">{{ item.label }}</span>
-          <!-- sub menu -->
-          <div class="submenu" [ngClass]="{'show': activeItem === item}">
-            <div class="submenu-content" [ngClass]="{'show': activeItem === item}">
-              <div class="submenu-grid">
-                <ng-container *ngFor="let group of item.subMenu">
-                  <div class="submenu-group">
-                    <div *ngIf="group.title" class="submenu-title">{{ group.title }}</div>
-                    <div *ngFor="let sub of group.items" class="submenu-item">
-                      <span>{{ sub.label }}</span>
-                    </div>
-                  </div>
-                </ng-container>
-              </div>
-            </div>
-          </div>
-          <!-- sub menu -->
+          <span class="nav-link" (mouseenter)="onItemEnter(item)" (focus)="onItemEnter(item)">{{ item.label }}</span>
         </li>
         <li>
           <span class="d-none d-lg-block" style="padding-left: 10px;">
@@ -68,3 +53,24 @@
     </div>
   </div>
 </nav>
+
+<div class="nav-curtain" [class.show]="!!activeItem">
+</div>
+
+<div class="submenu" (mouseleave)="onSubLeave()" [class.show]="!!activeItem">
+  <div class="submenu-content" *ngIf="activeItem as act">
+    <div class="submenu-grid ms-auto">
+      <ng-container *ngFor="let group of act.subMenu">
+        <div class="submenu-group">
+          <h2 class="submenu-title">{{ group.title }}</h2>
+          <div class="submenu-item" *ngFor="let sub of group.items">
+            <span>{{ sub.label }}</span>
+          </div>
+          <div *ngFor="let sub of group.subItems">
+            <span class="submenu-item">{{ sub.label }}</span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

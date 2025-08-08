@@ -1,10 +1,12 @@
+@use "../../../styles/variables.scss" as v;
+
 .navbar {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 99999;
 
   .navbar-nav {
     display: flex;
@@ -53,61 +55,95 @@
       transform: scale(1.1);
     }
   }
+}
 
-  .submenu {
-    position: fixed;
-    top: 66px;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    height: auto;
-    transform: translateY(-20px);
-    transition: transform 0.5s ease, opacity 0.4s ease;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 40px 100px;
-    z-index: 1;
+.submenu {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease,
+    visibility 0s linear 0.22s;
 
-    &.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  background: #fff; /* KHÔNG dùng backdrop-filter ở đây */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
 
-    .submenu-content {
-      display: none;
-      padding-left: 13.5rem;
-      &.show {
-        display: block;
-      }
-    }
+.submenu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 1000;
+}
 
-    .submenu-grid {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.submenu-content {
+  padding: 90px 0 50px 310px;
+}
 
-    .submenu-group {
-      min-width: 180px;
-    }
+.submenu-grid {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .submenu-title {
-      font-weight: 600;
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
+.submenu-group {
+  min-width: 180px;
+}
 
-    .submenu-item {
-      padding: 6px 0;
-      font-size: 15px;
-      color: black;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-  }
+.submenu-group:first-child .submenu-item span {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.submenu-title {
+  font-family: v.$apple-font;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.submenu-item {
+  padding: 6px 0;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: v.$apple-font;
+}
+
+.nav-curtain {
+  position: fixed;
+  inset: 0;
+  top: 66px;
+  height: 100vh;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.nav-curtain.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.25s ease;
 }

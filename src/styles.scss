@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "styles/variables.scss" as v;
+
 body {
   margin: 0;
 }
@@ -23,6 +25,5 @@ body {
 
 .head {
   margin-bottom: 0;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
+  font-family: v.$apple-font;
 }

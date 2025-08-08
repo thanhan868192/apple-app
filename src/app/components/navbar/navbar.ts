@@ -11,21 +11,24 @@ import { NAV_ITEMS } from '../../constants/navbar.constant';
   styleUrl: './navbar.scss'
 })
 export class Navbar {
-  isMenuOpen = false;
   activeItem: any = null;
-  timeoutId: any;
   navItems: MyMenuItem[] = NAV_ITEMS;
+  isMenuOpen = false;
+  timeoutId: any;
 
   ngOnInit() {
   }
 
-  onMouseEnter(item: any) {
-    clearTimeout(this.timeoutId);
+  onItemEnter(item: any) {
     this.activeItem = item;
   }
 
-  onMouseLeave() {
-    this.activeItem = null;
+  onNavLeave() {
+    this.activeItem = null
+  }
+
+  onSubLeave() {
+    this.onNavLeave();
   }
 
   toggleMenu() {
