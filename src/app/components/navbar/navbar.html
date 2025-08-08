@@ -50,6 +50,24 @@
           </span>
         </li>
       </ul>
+
+      <div *ngIf="isMenuOpen && activeItemMobile" class="submenu" [class.show]="!!activeItemMobile">
+        <div class="submenu-content" *ngIf="activeItemMobile as act">
+          <div class="submenu-grid ms-auto">
+            <ng-container *ngFor="let group of act.subMenu">
+              <div class="submenu-group">
+                <h2 class="submenu-title">{{ group.title }}</h2>
+                <div class="submenu-item" *ngFor="let sub of group.items">
+                  <span>{{ sub.label }}</span>
+                </div>
+                <div *ngFor="let sub of group.subItems">
+                  <span class="submenu-item">{{ sub.label }}</span>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -57,7 +75,7 @@
 <div class="nav-curtain" [class.show]="!!activeItem">
 </div>
 
-<div class="submenu" (mouseleave)="onSubLeave()" [class.show]="!!activeItem">
+<div *ngIf="!isMenuOpen" class="submenu" (mouseleave)="onSubLeave()" [class.show]="!!activeItem">
   <div class="submenu-content" *ngIf="activeItem as act">
     <div class="submenu-grid ms-auto">
       <ng-container *ngFor="let group of act.subMenu">

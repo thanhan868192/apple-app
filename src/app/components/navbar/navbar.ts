@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NAV_ITEMS } from '../../constants/navbar.constant';
 import { MyMenuItem } from '../../models/menu.model';
 import { SharedModule } from '../../modules/shared.module';
-import { NAV_ITEMS } from '../../constants/navbar.constant';
 
 @Component({
   selector: 'app-navbar',
@@ -12,15 +12,21 @@ import { NAV_ITEMS } from '../../constants/navbar.constant';
 })
 export class Navbar {
   activeItem: any = null;
+  activeItemMobile: any = null;
   navItems: MyMenuItem[] = NAV_ITEMS;
   isMenuOpen = false;
   timeoutId: any;
 
-  ngOnInit() {
-  }
+  constructor() { }
+
+  ngOnInit() { }
 
   onItemEnter(item: any) {
-    this.activeItem = item;
+    if (this.isMenuOpen) {
+      this.activeItemMobile = item;
+    } else {
+      this.activeItem = item;
+    }
   }
 
   onNavLeave() {
@@ -33,6 +39,16 @@ export class Navbar {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
   }
 
 }
