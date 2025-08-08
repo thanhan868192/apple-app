@@ -189,7 +189,7 @@
     }
 
     .navbar-collapse {
-      position: absolute;
+      position: fixed;
       top: 50px;
       inset: 0;
       left: 0;
@@ -200,10 +200,12 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
 
-      overflow: auto;
+      height: 100svh;
+      max-height: 100svh;
+      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
-      padding: 16px 20px 32px;
+      touch-action: pan-y;
     }
 
     .navbar-collapse:not(.show) {
