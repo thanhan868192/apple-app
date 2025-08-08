@@ -197,24 +197,24 @@
       bottom: 0;
 
       /* Dùng vh + svh để tương thích iOS cũ & mới */
-      height: calc(100vh - 50px);
-      height: calc(100svh - 50px);
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-
-      overflow-y: auto; /* scroll chính ở đây */
-      -webkit-overflow-scrolling: touch;
-      //
-      // height: 100dvh;
+      // height: calc(100vh - 50px);
+      // height: calc(100svh - 50px);
       // background: rgba(255, 255, 255, 0.96);
       // backdrop-filter: blur(10px);
       // -webkit-backdrop-filter: blur(10px);
 
-      // height: 100svh;
-      // max-height: 100svh;
-      // overflow-y: auto;
+      // overflow-y: auto; /* scroll chính ở đây */
       // -webkit-overflow-scrolling: touch;
+      //
+      height: 100dvh;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      height: 100svh;
+      max-height: 100svh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .navbar-collapse:not(.show) {
@@ -231,26 +231,23 @@
     }
   }
 
-  // .submenu-content {
-  //   padding-left: 60px;
-  //   padding-top: 30px;
-  // }
-
-  /* Submenu chiếm phần còn lại và tự cuộn được */
   .submenu-content {
     padding-left: 60px;
     padding-top: 30px;
-
-    /* giới hạn chiều cao trong panel đang mở */
-    max-height: calc(100svh - 50px - 30px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
-  /* Nếu bạn có .submenu wrapper cần cuộn, bật luôn ở đây */
-  .submenu {
-    max-height: calc(100svh - 50px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+  // .submenu-content {
+  //   padding-left: 60px;
+  //   padding-top: 30px;
+
+  //   max-height: calc(100svh - 50px - 30px);
+  //   overflow-y: auto;
+  //   -webkit-overflow-scrolling: touch;
+  // }
+
+  // .submenu {
+  //   max-height: calc(100svh - 50px);
+  //   overflow-y: auto;
+  //   -webkit-overflow-scrolling: touch;
+  // }
 }
