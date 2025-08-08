@@ -1,91 +1,38 @@
-<div class="row g-2 mb-2 ">
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image" style="background-image: url('promo_ipadpro_avail__s271j89g8kii_large.jpg'); height: 560px;">
-      <div class="overlay-content d-flex flex-column justify-content-between align-items-center text-center">
-        <div class="d-flex flex-column align-items-center">
-          <h2 class="head fw-bold">iPad Pro</h2>
-          <p class="subhead">Unbelievably thin. Incredibly powerful.</p>
-          <div class="d-flex gap-3 ">
-            <button class="small-button btn btn-primary btn-sm">Learn more</button>
-            <button class="small-button btn btn-outline-primary btn-sm">Buy</button>
+<div class="row g-2 mb-2">
+  <div class="col-md-6 position-relative text-{{promo.textColor}}" *ngFor="let promo of promos">
+
+    <div class="bg-image" [ngStyle]="{'background-image': 'url(' + promo.bg + ')', 'height.px': promo.height}">
+      <div class="overlay-content d-flex flex-column align-items-center text-center" [ngClass]="{
+          'justify-content-between': promo.layout === 'center-between',
+          'justify-content-end': promo.layout === 'center-end',
+          'justify-content': promo.layout === 'center'
+        }">
+
+        <ng-container *ngIf="promo.title">
+          <div class="d-flex flex-column align-items-center">
+            <h2 class="head fw-bold">{{ promo.title }}</h2>
+            <p class="subhead" [innerHTML]="promo.subtitle"></p>
+            <div class="d-flex gap-3">
+              <button *ngFor="let btn of promo.buttons" class="small-button btn btn-sm"
+                [ngClass]="btn.type === 'primary' ? 'btn-primary' : 'btn-outline-primary'">
+                {{ btn.label }}
+              </button>
+            </div>
           </div>
-        </div>
-        <small class="text-gradient mb-2">Built for Apple Intelligence.</small>
-      </div>
-    </div>
-  </div>
+          <small *ngIf="promo.note" class="text-gradient mb-2">{{ promo.note }}</small>
+        </ng-container>
 
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image" style="background-image: url('promo_chatgpt__ezitunjy33u6_large.jpg'); height: 560px;">
-      <div class="overlay-content d-flex flex-column justify-content-end align-items-center text-center">
-        <h2 class="head fw-bold">Apple Intelligence</h2>
-        <p class="subhead">Point. Shoot. Cook. <br>With visual intelligence.<sup aria-label="Footnote 2">2</sup></p>
-        <div class="d-flex gap-3 ">
-          <button class="small-button btn btn-primary btn-sm">Watch the clip</button>
-          <button class="small-button btn btn-outline-primary btn-sm">Lean more</button>
+        <ng-container *ngIf="promo.imgTitle">
+          <h3><img [src]="promo.imgTitle" alt="Apple Logo" /></h3>
+          <p class="subhead" [innerHTML]="promo.subtitle"></p>
+          <div class="d-flex gap-3">
+            <button *ngFor="let btn of promo.buttons" class="small-button btn btn-sm"
+              [ngClass]="btn.type === 'primary' ? 'btn-primary' : 'btn-outline-primary'">
+              {{ btn.label }}
+            </button>
+          </div>
+        </ng-container>
 
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image"
-      style="background-image: url('promo_airpods_pro_2_avail__vkitqi3okwie_large.jpg'); height: 560px;">
-      <div class="overlay-content d-flex flex-column justify-content-end align-items-center text-center">
-        <h2 class="head fw-bold">AirPods Pro 2</h2>
-        <p class="subhead">Now with a Hearing Aid feature.<sup aria-label="Footnote 3">3</sup></p>
-        <div class="d-flex gap-3">
-          <button class="small-button btn btn-primary btn-sm">Learn more</button>
-          <button class="small-button btn btn-outline-primary btn-sm">Buy</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image"
-      style="background-image: url('promo_apple_watch_series_10_avail_lte__c70y29goir42_large.jpg'); height: 560px;">
-      <div class="overlay-content black-content d-flex flex-column justify-content align-items-center text-center">
-        <h3>
-          <img src="promo_logo_apple_watch_series_10__qk5vaa89vnm2_large.png" alt="Apple Logo" />
-        </h3>
-        <p class="subhead">Thinstant classic.</p>
-        <div class="d-flex gap-3 ">
-          <button class="small-button btn btn-primary btn-sm">Learn more</button>
-          <button class="small-button btn btn-outline-primary btn-sm">Buy</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image" style="background-image: url('promo_iphone_tradein__bugw15ka691e_large.jpg'); height: 560px;">
-      <div class="overlay-content black-content d-flex flex-column justify-content align-items-center text-center">
-        <h3>
-          <img src="promo_logo_iphone_tradein__7y3gtai5az66_large.png" alt="Apple Logo" />
-        </h3>
-        <p class="subhead">Get $160-$600 in credit when you trade<br> in iPhone 12 or higher.<sup
-            aria-label="Footnote 4">4</sup></p>
-        <div class="d-flex gap-3 ">
-          <button class="small-button btn btn-primary btn-sm">Learn more</button>
-          <button class="small-button btn btn-outline-primary btn-sm">Buy</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 position-relative text-white">
-    <div class="bg-image" style="background-image: url('promo_apple_card__5cm7draujpey_large.jpg'); height: 560px;">
-      <div class="overlay-content black-content d-flex flex-column justify-content align-items-center text-center">
-        <h3>
-          <img src="logo__dcojfwkzna2q_large.png" alt="Apple Logo" />
-        </h3>
-        <p class="subhead">Get up to 3% Daily Cash back<br> with every purchase.</p>
-        <div class="d-flex gap-3 ">
-          <button class="small-button btn btn-primary btn-sm">Learn more</button>
-          <button class="small-button btn btn-outline-primary btn-sm">Buy</button>
-        </div>
       </div>
     </div>
   </div>
