@@ -1,0 +1,25 @@
+<section class="gettoknow">
+    <div class="section-content-responsive">
+        <header class="section-header row">
+            <h2 class="typography-section-headline">Get to know iPhone</h2>
+        </header>
+    </div>
+
+    <div class="cards scroller">
+        <article *ngFor="let c of cards; let i = index" class="card" [class.light]="c.light" displayOnView
+            [displayClass]="'is-visible'">
+            <div class="img-wrap">
+                <picture>
+                    <img class="card-img full" [ngSrc]="c.placeholder" width="640" height="960"
+                        [sizes]="'(max-width: 405px) 80vw, 40vw'" [priority]="i === 0" decoding="async"
+                        (load)="onFullLoaded($event)" />
+                </picture>
+            </div>
+            <header class="card-header">
+                <p class="eyebrow">{{ c.subtitle }}</p>
+                <h3 class="headline">{{ c.title }}</h3>
+            </header>
+        </article>
+    </div>
+
+</section>

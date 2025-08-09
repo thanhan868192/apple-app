@@ -1,16 +1,29 @@
-<div class="row g-2 mb-2">
-  <div class="col-md-6 position-relative text-{{promo.textColor}}" *ngFor="let promo of promos">
-
-    <div class="bg-image" [ngStyle]="{'background-image': 'url(' + promo.bg + ')', 'height.px': promo.height}">
-      <div class="overlay-content d-flex flex-column align-items-center text-center" [ngClass]="{
+<section class="promos container-fluid">
+  <div class="row g-2 mb-2">
+    <div class="col-md-6 position-relative text-{{promo.textColor}}" *ngFor="let promo of promos">
+      <div class="bg-image" [ngStyle]="{'background-image': 'url(' + promo.bg + ')', 'height.px': promo.height}">
+        <div class="overlay-content d-flex flex-column align-items-center text-center" [ngClass]="{
           'justify-content-between': promo.layout === 'center-between',
           'justify-content-end': promo.layout === 'center-end',
           'justify-content': promo.layout === 'center'
         }">
 
-        <ng-container *ngIf="promo.title">
-          <div class="d-flex flex-column align-items-center">
-            <h2 class="head fw-bold">{{ promo.title }}</h2>
+          <ng-container *ngIf="promo.title">
+            <div class="d-flex flex-column align-items-center">
+              <h2 class="head fw-bold">{{ promo.title }}</h2>
+              <p class="subhead" [innerHTML]="promo.subtitle"></p>
+              <div class="d-flex gap-3">
+                <button *ngFor="let btn of promo.buttons" class="small-button btn btn-sm"
+                  [ngClass]="btn.type === 'primary' ? 'btn-primary' : 'btn-outline-primary'">
+                  {{ btn.label }}
+                </button>
+              </div>
+            </div>
+            <small *ngIf="promo.note" class="text-gradient mb-2">{{ promo.note }}</small>
+          </ng-container>
+
+          <ng-container *ngIf="promo.imgTitle">
+            <h3><img [src]="promo.imgTitle" alt="Apple Logo" /></h3>
             <p class="subhead" [innerHTML]="promo.subtitle"></p>
             <div class="d-flex gap-3">
               <button *ngFor="let btn of promo.buttons" class="small-button btn btn-sm"
@@ -18,22 +31,10 @@
                 {{ btn.label }}
               </button>
             </div>
-          </div>
-          <small *ngIf="promo.note" class="text-gradient mb-2">{{ promo.note }}</small>
-        </ng-container>
+          </ng-container>
 
-        <ng-container *ngIf="promo.imgTitle">
-          <h3><img [src]="promo.imgTitle" alt="Apple Logo" /></h3>
-          <p class="subhead" [innerHTML]="promo.subtitle"></p>
-          <div class="d-flex gap-3">
-            <button *ngFor="let btn of promo.buttons" class="small-button btn btn-sm"
-              [ngClass]="btn.type === 'primary' ? 'btn-primary' : 'btn-outline-primary'">
-              {{ btn.label }}
-            </button>
-          </div>
-        </ng-container>
-
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

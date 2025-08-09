@@ -8,10 +8,34 @@
   }
 }
 
+.section-content-responsive {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  width: 87.5vw;
+  max-width: 1680px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 80px;
+  margin-top: -10px;
+  gap: 28px;
+}
+
+.typography-section-headline {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+}
+
 .scroller {
+  margin-left: 10px;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 80vw;
   gap: 24px;
   padding: 0 24px 16px;
   overflow-x: auto;
@@ -21,6 +45,7 @@
 
 .card {
   position: relative;
+  width: 405px;
   height: clamp(460px, 90vh, 720px);
   border-radius: 28px;
   overflow: hidden;
@@ -36,20 +61,22 @@
     color: #1d1d1f;
   }
 
-  /* khi directive add class -> hiện */
   &.is-visible {
     transform: none;
     opacity: 1;
   }
 }
+.card-header {
+  position: absolute;
+  border-bottom: none;
+  background-color: unset;
+}
 
-/* khung ảnh */
 .img-wrap {
   position: absolute;
   inset: 0;
 }
 
-/* placeholder blur */
 .card-img.placeholder {
   position: absolute;
   inset: 0;
@@ -61,7 +88,6 @@
   transition: opacity 0.4s ease;
 }
 
-/* ảnh thật – ban đầu mờ + nhẹ translate */
 .card-img.full {
   position: absolute;
   inset: 0;
@@ -74,14 +100,12 @@
   transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
 }
 
-/* ảnh thật load xong -> hiển thị rõ */
 .card-img.full.loaded {
   opacity: 1;
   transform: none;
   filter: blur(0);
 }
 
-/* khi ảnh thật đã load -> ẩn placeholder */
 .img-wrap.full-loaded .card-img.placeholder {
   opacity: 0;
 }
