@@ -1,6 +1,7 @@
 <section class="promos container-fluid">
   <div class="row g-2 mb-2">
-    <div class="col-md-6 position-relative text-{{promo.textColor}}" *ngFor="let promo of promos">
+    <div class="promo-cards col-md-6 position-relative text-{{promo.textColor}}" *ngFor="let promo of promos"
+      displayOnView [displayClass]="'is-visible'">
       <div class="bg-image" [ngStyle]="{'background-image': 'url(' + promo.bg + ')', 'height.px': promo.height}">
         <div class="overlay-content d-flex flex-column align-items-center text-center" [ngClass]="{
           'justify-content-between': promo.layout === 'center-between',
