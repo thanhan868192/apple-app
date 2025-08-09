@@ -1,3 +1,5 @@
+@use "../../../styles/variables.scss" as v;
+
 .gettoknow {
   padding: 64px 0;
 
@@ -9,7 +11,7 @@
 }
 
 .section-content-responsive {
-  margin-inline-start: auto;
+  margin-left: 10px;
   margin-inline-end: auto;
   width: 87.5vw;
   max-width: 1680px;
@@ -21,6 +23,15 @@
   padding-bottom: 80px;
   margin-top: -10px;
   gap: 28px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .typography-section-headline {
@@ -28,8 +39,7 @@
   line-height: 1.07143;
   font-weight: 600;
   letter-spacing: -0.005em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  font-family: v.$apple-font;
 }
 
 .scroller {
@@ -109,4 +119,19 @@
 
 .img-wrap.full-loaded .card-img.placeholder {
   opacity: 0;
+}
+
+/* Mobile accordion */
+@media (max-width: 768px) {
+  .typography-section-headline {
+    font-size: 28px;
+  }
+
+  .card {
+    width: 266px;
+  }
+
+  .section-header {
+    padding-bottom: 48px;
+  }
 }

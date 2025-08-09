@@ -9,10 +9,11 @@ import { GET_TO_KNOW_ITEMS } from '../../constants/get-to-know.constant';
   styleUrl: './get-to-know.scss'
 })
 export class GetToKnow {
+  sectionVisible = false;
   cards = GET_TO_KNOW_ITEMS;
 
-  onFullLoaded(ev: Event) {
-    const img = ev.target as HTMLImageElement;
+  onFullLoaded(event: Event) {
+    const img = event.target as HTMLImageElement;
     img.classList.add('loaded');
 
     const wrap = img.closest('.img-wrap');

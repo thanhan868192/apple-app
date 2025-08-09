@@ -6,6 +6,7 @@ import { Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from "@ang
 })
 export class DisplayOnViewDirective implements OnInit, OnDestroy {
     @Input() displayClass = 'is-visible';
+
     private io?: IntersectionObserver;
 
     constructor(private el: ElementRef, private render: Renderer2) { }
